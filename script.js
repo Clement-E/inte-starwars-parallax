@@ -10,3 +10,5 @@ $(function() {
   });
   
   
+/* Sticky */
+var stickybit = stickybits('.caption-right');

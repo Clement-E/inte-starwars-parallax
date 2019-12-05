@@ -4,6 +4,11 @@ html {
   font-family: 'Open Sans', sans-serif;
 }
 
+body, html {
+  height: 100%;
+  background-color: black;
+}
+
 *,
 *:before,
 *:after {
@@ -15,17 +20,22 @@ html {
   text-decoration: none;
 }
 
-body {
-  background-color: black;
-}
-
-nav {
-  background: #212121c2;
-  height: 55px;
+/* MENU */
+header {
+  position: fixed;
+  width: 100%;
   z-index: 1;
+  /* ---------- */
+  /* RESPONSIVE */
+  /* ---------- */
 }
 
-nav #menu {
+header nav {
+  background: rgba(0, 0, 0, 0.925);
+  height: 55px;
+}
+
+header nav #menu {
   max-width: 940px;
   height: 55px;
   margin: 0 auto;
@@ -39,7 +49,7 @@ nav #menu {
           align-items: center;
 }
 
-nav #menu li {
+header nav #menu li {
   display: inline-block;
   cursor: pointer;
   text-transform: uppercase;
@@ -47,15 +57,15 @@ nav #menu li {
   font-size: 14px;
 }
 
-nav #menu li a {
+header nav #menu li a {
   color: #fff;
 }
 
-nav #menu li a:hover {
+header nav #menu li a:hover {
   color: #FFE900;
 }
 
-#toggle {
+header #toggle {
   position: absolute;
   right: 20px;
   top: 8px;
@@ -70,7 +80,7 @@ nav #menu li a:hover {
   opacity: 0;
 }
 
-#toggle .span {
+header #toggle .span {
   height: 5px;
   background: white;
   margin: 6px auto;
@@ -78,28 +88,27 @@ nav #menu li a:hover {
           backface-visibility: hidden;
 }
 
-#toggle.on #one {
+header #toggle.on #one {
   -webkit-transform: rotate(45deg) translateX(6px) translateY(6px);
           transform: rotate(45deg) translateX(6px) translateY(6px);
 }
 
-#toggle.on #two {
+header #toggle.on #two {
   opacity: 0;
 }
 
-#toggle.on #three {
+header #toggle.on #three {
   -webkit-transform: rotate(-45deg) translateX(9px) translateY(-11px);
           transform: rotate(-45deg) translateX(9px) translateY(-11px);
 }
 
-#resize {
+header #resize {
   z-index: 1;
   position: absolute;
-  top: 55px;
-  background: transparent;
+  top: -340px;
   width: 100%;
   visibility: hidden;
-  opacity: 0;
+  opacity: 1;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   display: -webkit-box;
@@ -112,14 +121,16 @@ nav #menu li a:hover {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  background-color: rgba(0, 0, 0, 0.815);
 }
 
-#resize.active {
+header #resize.active {
   visibility: visible;
   opacity: 0.99;
+  top: 55px;
 }
 
-#resize #menu li {
+header #resize #menu li {
   display: block;
   text-align: center;
   padding: 10px 0;
@@ -131,38 +142,249 @@ nav #menu li a:hover {
   transition: all 0.3s ease-out;
 }
 
-#resize #menu li:hover a {
+header #resize #menu li:hover a {
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
 }
 
-#resize #menu li a {
+header #resize #menu li a {
   color: white;
 }
 
-#resize #menu li a:hover {
-  color: yellow;
+header #resize #menu li a:hover {
+  color: #FFE900;
 }
 
 @media (max-width: 700px) {
-  nav #menu li {
+  header nav #menu li {
     font-size: 9px;
   }
 }
 
 @media (max-width: 375px) {
-  #toggle {
+  header {
+    /* NAVIGATION */
+    /* INTRO */
+  }
+  header #toggle {
     visibility: visible;
     opacity: 1;
   }
-  nav #menu {
+  header nav #menu {
     display: none;
+  }
+  header #intro {
+    background: url("assets/header-bg-2x.png");
   }
 }
 
 @media (min-width: 375px) {
-  #resize {
+  header #resize {
     visibility: hidden !important;
   }
+}
+
+/* SECTIONS */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  position: relative;
+  opacity: 1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgimg-1 {
+  background-image: url("assets/header-bg.png");
+  min-height: 100%;
+  padding-bottom: 250px;
+  /* RESPONSIVE */
+}
+
+.bgimg-1 .caption {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: white;
+  padding: 0 60px;
+}
+
+.bgimg-1 .caption-top {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.bgimg-1 .caption-top img {
+  width: 50%;
+  margin: 250px auto 100px;
+}
+
+.bgimg-1 .caption-left {
+  width: 30%;
+  padding: 0 60px 0px 0;
+}
+
+.bgimg-1 .caption-left h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.bgimg-1 .caption-left p {
+  font-size: 22px;
+  margin-bottom: 20px;
+  line-height: 30px;
+  text-align: justify;
+}
+
+.bgimg-1 .caption-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30%;
+}
+
+.bgimg-1 .caption-right-img {
+  height: 600px;
+}
+
+@media (max-width: 375px) {
+  .bgimg-1 .caption {
+    padding: 0;
+  }
+  .bgimg-1 .caption-top .caption-img {
+    width: 100%;
+  }
+  .bgimg-1 .caption-left {
+    padding: 0;
+    width: 80%;
+  }
+  .bgimg-1 .caption-left h1 {
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  .bgimg-1 .caption-left p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 22px;
+    text-align: justify;
+  }
+  .bgimg-1 .caption-right {
+    display: none;
+  }
+}
+
+.bgimg-2 {
+  background-image: url("./Assets/kiloren.jpg");
+  min-height: 1400px;
+  padding-top: 150px;
+  padding-bottom: 100px;
+  /* RESPONSIVE */
+}
+
+.bgimg-2-caption {
+  width: 60%;
+  margin: 0 auto;
+  padding-right: 10px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.527);
+}
+
+.bgimg-2-caption-img {
+  float: left;
+  margin-right: 20px;
+}
+
+.bgimg-2-caption p {
+  font-size: 22px;
+  margin-bottom: 20px;
+  line-height: 30px;
+  text-align: justify;
+}
+
+.bgimg-2-caption p .gras {
+  font-weight: bold;
+}
+
+@media (max-width: 375px) {
+  .bgimg-2-caption {
+    width: 90%;
+    margin: 0 auto;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.527);
+  }
+  .bgimg-2-caption-img {
+    margin-bottom: 25px;
+  }
+  .bgimg-2-caption p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 22px;
+    text-align: justify;
+  }
+}
+
+/* FOOTER */
+.footer-top {
+  background-image: url("./Assets/stormtroopers.jpg");
+  height: 250px;
+}
+
+.footer-bottom {
+  background-image: url("./Assets/darthvader_2x.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-color: #1a1a1a;
+  padding: 100px 0 100px;
+}
+
+.footer-bottom-tm {
+  text-align: center;
+  margin-left: -50px;
+  color: grey;
+  padding-bottom: 50px;
+}
+
+.footer-bottom-tm .gras {
+  font-weight: bold;
+}
+
+.footer-bottom-links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: grey;
+}
+
+.footer-bottom-links a {
+  margin: 10px auto;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+
+.footer-bottom-links-right {
+  text-align: center;
+}
+
+.footer-bottom-links-right .reseaux {
+  display: inline-block;
+  width: 30px;
+  padding-top: 10px;
 }
 /*# sourceMappingURL=style.css.map */
