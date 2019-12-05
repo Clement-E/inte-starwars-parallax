@@ -102,6 +102,16 @@ header #toggle.on #three {
           transform: rotate(-45deg) translateX(9px) translateY(-11px);
 }
 
+header #toggle-above {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  position: absolute;
+  right: 20px;
+  top: 8px;
+  z-index: 1000;
+}
+
 header #resize {
   z-index: 1;
   position: absolute;
@@ -258,6 +268,35 @@ header #resize #menu li a:hover {
 
 .bgimg-1 .caption-right-img {
   height: 600px;
+}
+
+@media (max-width: 860px) {
+  .bgimg-1 .caption {
+    padding: 0;
+  }
+  .bgimg-1 .caption-top .caption-img {
+    width: 100%;
+  }
+  .bgimg-1 .caption-left {
+    padding: 0 10px 0 0;
+    width: 30%;
+  }
+  .bgimg-1 .caption-left h1 {
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+  .bgimg-1 .caption-left p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 22px;
+    text-align: justify;
+  }
+  .bgimg-1 .caption-right {
+    width: 35%;
+  }
+  .bgimg-1 .caption-right img {
+    width: 95%;
+  }
 }
 
 @media (max-width: 375px) {
