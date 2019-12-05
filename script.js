@@ -3,8 +3,7 @@
 
 document.addEventListener("DOMContentLoaded", function() {
   document.getElementById("toggle-above").addEventListener('click', function(e) { 
-    let burger = document.getElementById("toggle");
-    burger.classList.toggle("on");
+    document.getElementById("toggle").classList.toggle("on");
     document.getElementById("resize").classList.toggle("active"); 
   })
 });
